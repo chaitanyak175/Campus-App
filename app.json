@@ -14,11 +14,18 @@
       [
         "expo-build-properties",
         {
-          "android": { "newArchEnabled": true },
-          "ios": { "newArchEnabled": true }
+          "android": {
+            "newArchEnabled": true,
+            "useFrameworks": "static"
+          },
+          "ios": {
+            "newArchEnabled": true
+          }
         }
       ],
-      "expo-router"
+      "expo-router",
+      "@react-native-firebase/app",
+      "@react-native-firebase/auth"
     ],
     "experiments": {
       "typedRoutes": true,
@@ -34,13 +41,18 @@
     },
     "assetBundlePatterns": ["**/*"],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.campus.firebase",
+      "googleServicesFile": "./GoogleService-Info.plist"
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "bundleIdentifier": "com.campus.firebase",
+      "googleServicesFile": "./google-services.json",
+      "package": "com.campus.firebase"
     }
   }
 }
