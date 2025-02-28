@@ -1,4 +1,5 @@
 import { Stack, Link } from 'expo-router';
+import React from 'react';
 
 import { Button } from '~/components/Button';
 import { Container } from '~/components/Container';
@@ -6,7 +7,7 @@ import { ScreenContent } from '~/components/ScreenContent';
 
 export default function Home() {
   return (
-    <>
+    <React.Fragment>
       <Stack.Screen options={{ title: 'Home' }} />
       <Container>
         <ScreenContent path="app/index.tsx" title="Home" />
@@ -14,6 +15,6 @@ export default function Home() {
           <Button title="Show Details" />
         </Link>
       </Container>
-    </>
+    </React.Fragment>
   );
 }
